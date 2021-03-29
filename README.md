@@ -1,22 +1,22 @@
 # Project Setup as on April 2021
-
-- Step 1 : [Create React Application](https://github.com/sharanainapurapu/react-boilerplate-project#step-1-----------------------create-react-application---------------------)
-- Step 2 : [Add SCSS to your applicaiton](https://github.com/sharanainapurapu/react-boilerplate-project#step-2-----------------------add-scss-to-your-applicaiton---------------------)
-- Step 3 : [Setup ESlint, Jest and Prettier](https://github.com/sharanainapurapu/react-boilerplate-project#step-3-----------------------setup-eslint-jest-and-prettier---------------------)
-- Step 4 : [Set up Pre-Commit Hook](https://github.com/sharanainapurapu/react-boilerplate-project#step-4-----------------------set-up-pre-commit-hook---------------------)
+https://satcologit.siriuscom.com/asharan/setup_reactjs/blob/master/README.md#step-1-create-react-application-
+- Step 1 : [Create React Application](https://satcologit.siriuscom.com/asharan/setup_reactjs/blob/master/README.md#step-1-create-react-application-)
+- Step 2 : [Add SCSS to your applicaiton](https://satcologit.siriuscom.com/asharan/setup_reactjs/blob/master/README.md#step-2-add-scss-to-your-applicaiton-)
+- Step 3 : [Setup ESlint, Jest and Prettier](https://satcologit.siriuscom.com/asharan/setup_reactjs/blob/master/README.md#step-3-setup-eslint-jest-and-prettier-)
+- Step 4 : [Set up Pre-Commit Hook](https://satcologit.siriuscom.com/asharan/setup_reactjs/blob/master/README.md#step-4-set-up-pre-commit-hook-)
 
 ------------- Optional -------------
 
 #### If you are planning to add redux to your project
 
-- Step 5 : [Adding Redux](https://github.com/sharanainapurapu/react-boilerplate-project#step-5-----------------------adding-redux---------------------)
-- Step 6 : [Adding Thunk](https://github.com/sharanainapurapu/react-boilerplate-project#step-6-----------------------adding-thunk---------------------)
-- Step 7 : [Installing useful dev modules](https://github.com/sharanainapurapu/react-boilerplate-project#step-7-----------------------installing-useful-dev-modules---------------------)
+- Step 5 : [Adding Redux](https://satcologit.siriuscom.com/asharan/setup_reactjs/blob/master/README.md#step-5-adding-redux-)
+- Step 6 : [Adding Thunk](https://satcologit.siriuscom.com/asharan/setup_reactjs/blob/master/README.md#step-6-adding-thunk-)
+- Step 7 : [Installing useful dev modules](https://satcologit.siriuscom.com/asharan/setup_reactjs/blob/master/README.md#step-7-installing-useful-dev-modules-)
 
 #### If you are more interested to know why you are executing above commands
 
-- [Possible errors that I came across while setting up the project](https://github.com/sharanainapurapu/react-boilerplate-project#---------possible-errors-that-i-came-across-while-setting-up-the-project---------)
-- [Annexure 1](https://github.com/sharanainapurapu/react-boilerplate-project#---------------------annexure-1---------------------)
+- [Possible errors that I came across while setting up the project](https://satcologit.siriuscom.com/asharan/setup_reactjs/blob/master/README.md#-possible-errors-that-i-came-across-while-setting-up-the-project-)
+- [Annexure 1](https://satcologit.siriuscom.com/asharan/setup_reactjs/blob/master/README.md#-annexure-1-)
 
 ### Step 1 : -------------------- Create React application --------------------
 
