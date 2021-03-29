@@ -355,6 +355,12 @@ That should solve your issue, while I was setting up this project that was commo
   }
 ```
 
+
+Please make sure you enable this in your VS Code, it will save lot of time.
+
+![Image](https://i.stack.imgur.com/H8fpQ.png)
+
+
 ### -------------------- Annexure 1 --------------------
 
 #### Series of questions asked while setting up the eslint in step 3, approach 2.
