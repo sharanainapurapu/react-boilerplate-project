@@ -1,46 +1,378 @@
-# Getting Started with Create React App
+# Project Setup as on MAR 2021
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Step 1 : [Create React Application](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-1-----------------------create-react-application---------------------)
+- Step 2 : [Add SCSS to your applicaiton](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-2-----------------------add-scss-to-your-applicaiton---------------------)
+- Step 3 : [Setup ESlint, Jest and Prettier](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-3-----------------------setup-eslint-jest-and-prettier---------------------)
+- Step 4 : [Set up Pre-Commit Hook](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-4-----------------------set-up-pre-commit-hook---------------------)
 
-## Available Scripts
+------------- Optional -------------
 
-In the project directory, you can run:
+#### If you are planning to add redux to your project
 
-### `yarn start`
+- Step 5 : [Adding Redux](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-5-----------------------adding-redux---------------------)
+- Step 6 : [Adding Thunk](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-6-----------------------adding-thunk---------------------)
+- Step 7 : [Installing useful dev modules](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-7-----------------------installing-useful-dev-modules---------------------)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### If you are more interested to know why you are executing above commands
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [Possible errors that I came across while setting up the project](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------possible-errors-that-i-came-across-while-setting-up-the-project---------)
+- [Annexure 1](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------annexure-1---------------------)
 
-### `yarn test`
+### Step 1 : -------------------- Create React application --------------------
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##### `npx create-react-app my-app --template typescript`
 
-### `yarn build`
+##### (or)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##### `yarn create react-app my-app --template typescript`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Navigate to project folder in Terminal/Command prompt for executing below commands.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Step 2 : -------------------- Add SCSS to your applicaiton --------------------
 
-### `yarn eject`
+##### `npm i --save-dev node-sass`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##### (or)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##### `yarn add node-sass -D`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Rename the App.css and index.css files to App.scss and index.scss, change the path where ever they are being imported
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Please try running application using the below command to ensure everything is working fine
 
-## Learn More
+##### `npm start`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Step 3 : -------------------- Setup ESlint Jest and Prettier --------------------
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### a) Setup ESlint
+
+There are two ways to Install eslint
+
+- Using direct commands (airbnb - a popular style guide, pelase read annexure 1 for more info)
+- Installing the eslint globally
+
+##### Using direct commands - Approach 1
+
+Note, ESLint is installed with create-react-app, so you don’t need to explicitly install it. We will install the packages for Airbnb config.
+
+##### `yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-typescript eslint-plugin-jest`
+
+##### (or)
+
+##### `npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-typescript eslint-plugin-jest --dev`
+
+
+```sh
+npx install-peerdeps --dev eslint-config-airbnb
+```
+
+- create .eslintrc.js in the project root folder
+
+```sh
+  module.exports = {
+    extends: [
+      'airbnb-typescript',
+      'airbnb/hooks',
+      'plugin:@typescript-eslint/recommended',
+      'plugin:jest/recommended',
+      'plugin:prettier/recommended'
+    ],
+    plugins: ['react', '@typescript-eslint', 'jest'],
+    env: {
+      browser: true,
+      es6: true,
+      jest: true,
+    },
+    globals: {
+      Atomics: 'readonly',
+      SharedArrayBuffer: 'readonly',
+    },
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
+      },
+      ecmaVersion: 2018,
+      sourceType: 'module',
+      project: './tsconfig.json',
+    },
+    rules: {
+      'linebreak-style': 'off',
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-use-before-define": ["error"],
+      'prettier/prettier': [
+        'error',
+        {
+          endOfLine: 'auto'
+        }
+      ]
+    }
+  };
+```
+
+##### Installing the eslint globally - Approach 2
+
+If you want you want to follow any other design system and if you are okie to install ESlint in your system globally, you can run the following commands and it will take care of creating the eslint config file, downloading all the eslint dependencies.
+
+##### `npm install -g eslint`
+
+##### (or)
+
+##### `yarn global add eslint`
+
+##### `eslint --init`
+
+You will be asked some series of questions, please find more details about it in the annexure 1. After the whole process is done you will see .eslintrc"js/json/yaml" getting generated. You might have different set of items in extends section of the file, based on what options that you are chosing during the questionare. But make sure rest of the sections match with above set of rules.
+
+Open .eslintrc.js and add the following items into the extends and rules section
+
+```sh
+ extends: [
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+  ],
+```
+
+```sh
+  rules: {
+    "linebreak-style": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
+  },
+```
+
+#### b) Installing Prettier
+
+##### `yarn add -D prettier eslint-config-prettier eslint-plugin-prettier`
+
+##### (or)
+
+##### `npm i prettier eslint-config-prettier eslint-plugin-prettier --save-dev`
+
+#### c) Installing Jest
+
+##### `npm i @testing-library/react react-test-renderer jest-dom --save-dev`
+
+##### (or)
+
+##### `yarn add -D @testing-library/react react-test-renderer jest-dom`
+
+Please add below piece of code to scripts section is package.json
+
+```sh
+  "scripts": {
+    "format": "prettier --write src/**/*.ts{,x}",
+    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
+    "lint:fix": "eslint --fix ."
+  }
+```
+
+Try running application once again to make sure it is all running without any errors
+
+##### `npm start`
+
+### Step 4 : -------------------- Set up pre-commit hook --------------------
+
+Husky improves your commits. You can use it to lint your commit messages, run tests, lint code, etc... when you commit or push. Husky supports all Git hooks.
+
+##### `npm install --save-dev husky`
+
+Set up the husky pre-commit hook by adding following code to our package.json
+
+```sh
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+```
+
+### Step 5 : -------------------- Adding Redux --------------------
+
+##### `npm install redux react-redux`
+
+##### (or)
+
+##### `yarn add redux react-redux`
+
+We should install their types as development dependencies to help TypeScript understand the libraries.
+
+##### `npm install -D @types/redux @types/react-redux`
+
+### Step 6 : -------------------- Adding Thunk --------------------
+
+##### `npm install redux-thunk `
+
+##### (or)
+
+##### `yarn add redux-thunk `
+
+###### Okie, what is Thunk
+
+With a plain basic Redux store, you can only do simple synchronous updates by dispatching an action. Middleware extends the store's abilities, and lets you write async logic that interacts with the store. Thunks are the recommended middleware for basic Redux side effects logic, including complex synchronous logic that needs access to the store, and simple async logic like AJAX requests.
+
+##### `npm install @types/redux-thunk --dev`
+
+##### (or)
+
+##### `yarn add @types/redux-thunk -D`
+
+### Step 7 : -------------------- Installing useful dev modules --------------------
+
+##### `npm install redux-devtools-extension redux-logger --dev`
+
+##### (or)
+
+##### `yarn add -D redux-devtools-extension redux-logger`
+
+##### `npm i --save-dev @types/redux-logger`
+
+##### (or)
+
+##### `yarn add @types/redux-logger -D`
+
+The above two tools will help in logging the store and action objects when ever they are manipulated.
+
+```sh
+
+  import { createStore, applyMiddleware } from 'redux'
+  import { composeWithDevTools } from 'redux-devtools-extension'
+  import logger from 'redux-logger'
+  import thunk from 'redux-thunk'
+
+  import rootReducer from './rootReducer'
+
+  const store = createStore(
+    rootReducer,
+    composeWithDevTools(applyMiddleware(logger, thunk))
+  )
+
+  export default store;
+
+```
+
+### -------- Possible errors that I came across while setting up the project --------
+
+- At step 2, If you come across some error like " Couldn't find a declaration file for module 'react "
+
+##### `npm install @types/react`
+
+##### (or)
+
+##### `yarn add @types/react`
+
+That should solve your issue, while I was setting up this project that was common setup issue.
+
+- In step 3 while creating .eslintrc.json/js, what ever style approach you are taking, make sure that is put on the top in the extends array for example
+
+```sh
+  module.exports = {
+    extends: [
+      'airbnb-typescript',
+      'airbnb/hooks',
+      'plugin:@typescript-eslint/recommended',
+      'plugin:jest/recommended',
+    ]
+```
+
+```sh
+  module.exports = {
+    extends: [
+      'standard',
+      'plugin:@typescript-eslint/recommended',
+      'plugin:jest/recommended',
+    ]
+```
+
+### -------------------- Annexure 1 --------------------
+
+#### Series of questions asked while setting up the eslint in step 3, approach 2.
+
+#### How would you like to use ESLint?
+
+#### To check syntax only =>
+
+it helps you correct your syntax and make sure it conform to standard.
+
+##### To check syntax and find problems =>
+
+to help you check for syntax correctness and also help to find any problems in your code base
+
+##### To check syntax, find problems, and enforce code style\_ =>
+
+to help you check for syntax, find problem and enforce style, enforcing style means to conforms to a particular coding standard such as Airbnb, Google and other Standard coding style. But I always go for the last option the one with syntax, find problems and enforce code style
+
+#### What type of modules does your project use?
+
+##### Javascript module (import/export) =>
+
+if your project has babel installed then you definitely need to choose this option. If you are working on a project such as React, Vue, Angular e.t.c they all use babel so you need choose this option.
+
+##### CommonJS (require/exports) =>
+
+this option is meant for commonJS that has nothing to do with babel, maybe your nodejs project and any other javascript project
+
+#### Which framework does your project use?
+
+##### React =>
+
+if you are using react in/for your project then this option is for you
+
+##### Vue =>
+
+if you are using Vue in/for your project then this option is for you
+
+##### None of these =>
+
+if you are using neither React or Vue in your project choose this option
+
+#### Where does your code run?
+
+##### Browser =>
+
+if your project runs on browser e.g React, Angular, Vue e.t.c then go for this option
+
+##### Node =>
+
+if your project is a node based then gladly choose this option
+
+#### How would you like to define a style for your project?
+
+##### Use a popular style guide =>
+
+- This allows you to choose from set of popular style such as Airbnb,Standard and Google style guide, it is advisable to choose this option in order for you to follow popular and most used style guide and i will be choosen this option in this post.
+- Answer questions about your style: This is for custom style guide
+- Inspect your JavaScript file(s).: custom style guide
+
+Comparision between popular style guides in the market
+![Image](https://miro.medium.com/max/4800/1*K51eiJl-y9IfnWFK4IcHCQ.png)
+
+#### What format do you want your config file to be in?
+
+##### Javascript =>
+
+whether you want your eslint config file to be in .js file
+
+##### YAML =>
+
+whether you want your eslint config file to be in .yaml file
+
+##### JSON =>
+
+whether you want your eslint config file to be in .json file you can choose any option in this section
+
+after you have chosen your preferred configuration file type it will then prompt you to install all necessary dependencies. after all neccessary dependencies has been successfully installed it will now generate a config file with ".eslintrc"."js/json/yaml".
+
+References:
+
+1. https://brygrill.medium.com/create-react-app-with-typescript-eslint-prettier-and-github-actions-f3ce6a571c97
+2. https://betterprogramming.pub/comparing-the-top-three-style-guides-and-setting-them-up-with-eslint-98ea0d2fc5b7
+3. https://medium.com/swlh/developer-checklist-react-application-initial-set-up-d4568799b825
