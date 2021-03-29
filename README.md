@@ -172,6 +172,7 @@ yarn add -D @testing-library/react react-test-renderer jest-dom
 ```
 
 #### d) Final setup
+
 Please add below piece of code to scripts section is package.json
 
 ```sh
@@ -220,6 +221,12 @@ Husky improves your commits. You can use it to lint your commit messages, run te
 npm install --save-dev husky
 ```
 
+##### (or)
+
+```sh
+yarn add husky -D
+```
+
 Set up the husky pre-commit hook by adding following code to our package.json
 
 ```sh
@@ -251,13 +258,13 @@ npm install -D @types/redux @types/react-redux
 ### Step 6 : -------------------- Adding Thunk --------------------
 
 ```sh
-npm install redux-thunk 
+npm install redux-thunk
 ```
 
 ##### (or)
 
 ```sh
-yarn add redux-thunk 
+yarn add redux-thunk
 ```
 
 ###### Okie, what is Thunk
@@ -355,11 +362,9 @@ That should solve your issue, while I was setting up this project that was commo
   }
 ```
 
-
 Please make sure you enable this in your VS Code, it will save lot of time.
 
 ![Image](https://i.stack.imgur.com/H8fpQ.png)
-
 
 ### -------------------- Annexure 1 --------------------
 
@@ -441,7 +446,7 @@ whether you want your eslint config file to be in .json file you can choose any 
 after you have chosen your preferred configuration file type it will then prompt you to install all necessary dependencies. after all neccessary dependencies has been successfully installed it will now generate a config file with ".eslintrc"."js/json/yaml".
 
 What are those set of rules and extends that we added to .eslintrc.js
-[extends and roles](https://eslint.org/docs/user-guide/configuring/configuration-files#extending-configuration-files) 
+[extends and roles](https://eslint.org/docs/user-guide/configuring/configuration-files#extending-configuration-files)
 
 1. https://brygrill.medium.com/create-react-app-with-typescript-eslint-prettier-and-github-actions-f3ce6a571c97
 2. https://betterprogramming.pub/comparing-the-top-three-style-guides-and-setting-them-up-with-eslint-98ea0d2fc5b7
