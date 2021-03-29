@@ -434,7 +434,8 @@ whether you want your eslint config file to be in .json file you can choose any 
 
 after you have chosen your preferred configuration file type it will then prompt you to install all necessary dependencies. after all neccessary dependencies has been successfully installed it will now generate a config file with ".eslintrc"."js/json/yaml".
 
-References:
+What are those set of rules and extends that we added to .eslintrc.js
+[extends and roles]https://eslint.org/docs/user-guide/configuring/configuration-files#extending-configuration-files 
 
 1. https://brygrill.medium.com/create-react-app-with-typescript-eslint-prettier-and-github-actions-f3ce6a571c97
 2. https://betterprogramming.pub/comparing-the-top-three-style-guides-and-setting-them-up-with-eslint-98ea0d2fc5b7
