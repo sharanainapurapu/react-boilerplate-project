@@ -66,13 +66,13 @@ There are two ways to Install eslint
 Note, ESLint is installed with create-react-app, so you don’t need to explicitly install it. We will install the packages for Airbnb config.
 
 ```sh
-yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-typescript eslint-plugin-jest`
+yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-typescript eslint-plugin-jest
 ```
 
 ##### (or)
 
 ```sh
-npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-typescript eslint-plugin-jest --dev`
+npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-typescript eslint-plugin-jest --dev
 ```
 
 ```sh
